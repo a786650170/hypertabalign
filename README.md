@@ -102,7 +102,7 @@ Expected directory layout once data is in place:
 |---|---|
 | Table I row "HyperTabAlign (direct)" | `python scripts/qual_dump_hypertab.py --ckpt ./checkpoints/wdc_sota_v2.pt` |
 | Table II ablations | `python baselines/ablation_runner.py --mode {no_hgnn,row_only,col_only,no_contrastive,...}` |
-| Table III direct vs hypergraph | `python scripts/train.py --eval_only --ckpt ./checkpoints/wdc_sota_v2.pt --mode {hyper,direct}` |
+| Table III direct vs hypergraph | `python run.py --eval_only --ckpt ./checkpoints/wdc_sota_v2.pt --mode {hyper,direct}` |
 | Table IV efficiency | `python scripts/measure_efficiency.py --ckpt ./checkpoints/wdc_sota_v2.pt` |
 | Table V pair-classification F1 | `python baselines/pair_f1_eval.py --model {vanilla,rsupcon,mpnet,hypertabalign}` |
 | Table VII qualitative cases | `python scripts/qual_dump_hypertab.py && python scripts/qual_dump_rsupcon.py && python scripts/qual_dump_text.py --model mpnet && python scripts/merge_qual_cases.py` |
@@ -117,7 +117,7 @@ Expected directory layout once data is in place:
 
 ```bash
 # 4×H100 distributed data parallel, BF16, per-rank batch size 196
-torchrun --nproc_per_node=4 scripts/train.py \
+torchrun --nproc_per_node=4 run.py \
     --train_dir ./data/wdc_lspm_sampled/train \
     --kb_path   ./data/wdc_lspm_sampled/wdc_products_kb.jsonl \
     --num_train_negatives 96 \
