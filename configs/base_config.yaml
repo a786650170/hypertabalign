@@ -1,0 +1,15 @@
+model:
+  text_backbone: "microsoft/deberta-v3-small"
+  gnn_hidden_dim: 256
+  kb_embed_dim: 256
+
+training:
+  lr_backbone: 2e-5
+  lr_heads: 1e-4
+  epochs: 20
+  batch_size: 1
+  lambda_consistency: 0.1
+
+data:
+  root: "data/datasets/wdc_lspm_sampled/train"
+  max_text_len: 128

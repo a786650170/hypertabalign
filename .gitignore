@@ -1,0 +1,48 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+*.egg-info/
+.pytest_cache/
+
+# Editors / OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+*.swp
+
+# Project artifacts
+data/
+checkpoints/
+results/
+experiments/
+models_cache/
+*.pt
+*.pth
+*.ckpt
+*.bin
+*.safetensors
+*.parquet
+*.jsonl
+*.csv
+*.tsv
+*.png
+*.jpg
+*.pdf
+
+# Logs
+*.log
+nohup*.out
+*.pid
+
+# Backups
+*.bak
+*.bak.*
+
+# Local environment
+.env
+.venv/
+venv/
